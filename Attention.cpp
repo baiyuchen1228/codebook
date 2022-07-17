@@ -42,6 +42,6 @@ p paste
 u undo
 ctrl+r unundo
 
-warn
+warnnimg
 g++ -O2
 remainder,float error(change int),overflow,dont eat too much
