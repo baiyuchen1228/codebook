@@ -1,4 +1,4 @@
-// 每次加一個燈之後最長的距離
+// after each add light longest distance
 set<ll> st =  {0,x};
 multiset<ll> mst = {x};
 for(int i = 0;i <n;i++){
