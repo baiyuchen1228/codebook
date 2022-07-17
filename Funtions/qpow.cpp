@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
-
 ll qpow(ll a,ll n,ll m){
     ll res = 1;
     while(n > 0){
@@ -12,7 +8,4 @@ ll qpow(ll a,ll n,ll m){
         n >>= 1;
     }
     return res % m;
-}
-int main(){
-    return 0;
 }

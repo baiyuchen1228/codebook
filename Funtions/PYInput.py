@@ -10,7 +10,6 @@ for _ in range(0,t):
 # 2
 # 5 1 2 3 4 5
 # 4 1 2 3 4
-
 import sys # EOF
 for line in sys.stdin:
     a = int(line)
