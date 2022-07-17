@@ -15,7 +15,7 @@ ll nxt() {
     cin >> x;
     return x;
 }
-
+// n*m put 1*2 2*1
 map<int, vi> mp;
 ll n;
 ll m;

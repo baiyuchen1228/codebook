@@ -15,7 +15,7 @@ ll nxt() {
     cin >> x;
     return x;
 }
-int main(){
+int main(){// once two people
     ios::sync_with_stdio(0);
     cin.tie(0);
     ll n = nxt();
