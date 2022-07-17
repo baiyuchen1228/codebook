@@ -1,4 +1,4 @@
-Codeblock設定
+Codeblock set
 -std=c++14 -Wall -Wshadow -O2
 Linux -Wextra
 
@@ -34,7 +34,7 @@ imap {<CR> {<CR>}<esc>ko
 imap [ []<esc>i
 imap ( ()<esc>i
 
-vim指令
+vim command
 yy copy
 dd cut
 d^ form top to here cut
