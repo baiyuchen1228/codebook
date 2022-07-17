@@ -1,8 +1,7 @@
 Codeblock設定
 -std=c++14 -Wall -Wshadow -O2
-Linux可加找更多錯誤-Wextra
+Linux -Wextra
 
-標頭檔
 #include <algorithm>
 #include <iostream>
 #include <cassert>
@@ -20,7 +19,7 @@ Linux可加找更多錯誤-Wextra
 #include <vector>
 
 vim .vimrc
-cd -> vim .vimrc -> cd Desktop -> mkdir -> AC印出來
+cd -> vim .vimrc -> cd Desktop -> mkdir -> AC print
 syntax on
 set clipboard=unnamed
 set nu
@@ -36,13 +35,13 @@ imap [ []<esc>i
 imap ( ()<esc>i
 
 vim指令
-yy 複製當行
-dd 剪下當行
-d^ 從游標到最頂剪下
-p 貼上
+yy copy
+dd cut
+d^ form top to here cut
+p paste
 u undo
 ctrl+r unundo
 
-常犯的錯
+warn
 g++ -O2
-取餘數、浮點數會有誤差(可以轉整數處理)、注意溢位、別吃太飽
+remainder,float error(change int),overflow,dont eat too much
