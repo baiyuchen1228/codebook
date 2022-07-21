@@ -1,19 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long int lld;
-vector<lld> ans;
-lld qmul(lld x,lld y,lld m){
-    lld res = 0;
+typedef long long int ll;
+vector<ll> ans;
+ll qmul(ll x,ll y,ll m){
+    ll res = 0;
     for(;y > 0;y >>= 1,x = (x+x) % m){
         if(y & 1)res = (res+x) % m;
     }
     return res;
 }
-lld GCD(lld a, lld b){
+ll GCD(ll a, ll b){
     return b ? GCD(b, a % b) : a;
 }
-lld qpow(lld a,lld n,lld m){
-    lld res = 1;
+ll qpow(ll a,ll n,ll m){
+    ll res = 1;
     while(n > 0){
         if(n & 1){
             res = qmul(res,a,m);
@@ -23,18 +23,18 @@ lld qpow(lld a,lld n,lld m){
     }
     return res % m;
 }
-bool Isprime(lld n){  // O(k log N)
+bool Isprime(ll n){  // O(k log N)
     if(n==2) return true;
     if((!(n & 1))|| n==1) return false;
-    lld d = n - 1;
-    lld s = 0;
+    ll d = n - 1;
+    ll s = 0;
     while(!(d & 1)){
         s++;
         d/=2;
     }
     for(int i = 0;i < 10;i++){
-        lld x = rand() % (n-1) + 1;
-        lld tmp = d;
+        ll x = rand() % (n-1) + 1;
+        ll tmp = d;
         if(qpow(x,d,n) == 1){
             continue;
         }
@@ -52,10 +52,10 @@ bool Isprime(lld n){  // O(k log N)
     }
     return true;
 }
-lld f(lld x,lld c,lld n){
+ll f(ll x,ll c,ll n){
     return (qmul(x,x,n) + c) %n;
 }
-void factor(lld n){ // O(N^1/4)
+void factor(ll n){ // O(N^1/4)
     if(n == 1)return;
     if(n == 4){
         ans.push_back(2);
@@ -68,10 +68,10 @@ void factor(lld n){ // O(N^1/4)
     }
     else{
         again:;
-        lld c = rand() % (n-1) + 1;
-        lld x = rand() % (n-1) + 1;
-        lld y = x;
-        lld d;
+        ll c = rand() % (n-1) + 1;
+        ll x = rand() % (n-1) + 1;
+        ll y = x;
+        ll d;
         bool done = false;
         do{
             x = f(x,c,n);
@@ -91,13 +91,13 @@ void factor(lld n){ // O(N^1/4)
     return ;
 }
 int main(){
-    lld n;
+    ll n;
     while(cin >> n){
         ans.clear();
         factor(n);
         sort(ans.begin(),ans.end());
-        lld tmp = ans[0],cnt = 0;
-        for(lld i = 0;i < (lld)ans.size();i++){
+        ll tmp = ans[0],cnt = 0;
+        for(ll i = 0;i < (ll)ans.size();i++){
             if(ans[i]==tmp){
                 cnt++;
             }

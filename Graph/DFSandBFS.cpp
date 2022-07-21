@@ -32,8 +32,8 @@ void BFS(ll x){
     dis[x] = 0;
     q.push(x);
     while(!q.empty()){
-        ll s == q.front();q.pop();
-        for(u:adj[s]){
+        ll s = q.front();q.pop();
+        for(auto u:adj[s]){
             if(vis[u])continue;
             vis[u] = true;
             dis[u] = dis[s]+1;

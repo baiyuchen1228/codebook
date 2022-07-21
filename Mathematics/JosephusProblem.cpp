@@ -21,15 +21,14 @@ int josephus(int n, int k) { // from 0 index
         res += res / (k - 1);
     return res;
 }
-void Josephus2(int n){
-    ll a = 1, b = 0;
-    while(n > 0) {
-    	for (ll i = 2; i <= n; i+=2) {
-    		cout<<a*i + b<<' ';
-    	}
-    	if (n&1) cout<<a + b<<' ', b += a;
-    	else b -= a;
-    	a <<= 1;
-    	n >>= 1;
+ll Josephus2(ll n,ll k){
+    if(n==1) return 1;
+    if(k<=(n+1)/2) 
+    {
+        if(2*k>n) return (2*k)%n;
+        else return 2*k;
     }
+    ll temp=f(n/2,k-(n+1)/2);
+    if(n%2==1) return 2*temp+1;
+    return 2*temp-1;
 }

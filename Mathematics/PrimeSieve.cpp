@@ -5,8 +5,7 @@ using ll = long long int;
 const int N = 100000010;
 bool not_prime[N];
 vector<int>prime;
-void linear_sieve()
-{
+void linear_sieve(){
     int i;
     prime.push_back(2);
     for (i = 3; i*i<=N; i+=2){
@@ -21,7 +20,19 @@ void linear_sieve()
         }
     }
 }
+void Divisors(){
+    vi p(1000010);
+    for(int i = 2;i < N;i++){
+        if(!p[i]){
+            for(int j = i;j < N;j+= i){
+                p[j] = i;
+            }
+        }
+    }
+}
 
+// sum of factors
+// pi^(ai+1)-1/(pi-1)
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
