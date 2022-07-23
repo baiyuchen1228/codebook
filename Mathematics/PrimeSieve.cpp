@@ -33,6 +33,10 @@ void Divisors(){
 
 // sum of factors
 // pi^(ai+1)-1/(pi-1)
+
+// product of factors
+// n ^ (numbers of factors)
+// pi = pi-1^(ki+1) * xi ^ (ki*(ki+1)/2) ^ Ci-1
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
