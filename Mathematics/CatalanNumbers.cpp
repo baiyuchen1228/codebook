@@ -2,8 +2,8 @@
 using namespace std;
 typedef long long ll;
 // Function to print the number
-void catalan(int n)
-{
+void catalan(ll n)
+{// ((()))
     ll cat_ = 1;
     // For the first number
     cout << cat_ << " "; // C(0)
