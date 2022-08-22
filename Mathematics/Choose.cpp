@@ -43,6 +43,7 @@ void inverse(){
 ll choose(ll a,ll b){
     return fac[a] * inv[b] % m * inv[a-b] % m;
 }
+// C(n,k)*C(k,r) = C(n,r) * C(n-r,k-r)
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
