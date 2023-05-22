@@ -43,8 +43,8 @@ void prll(node* par){
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
-    ll n, t;
-    cin >> n >> t;
+    ll n, q;
+    cin >> n >> q;
     for(ll i = 0;i < n;i++){
         ll tmp;
         cin >> tmp;
@@ -52,7 +52,7 @@ int main(){
     }
     node *head;
     build(head = new node,0,n-1);
-    for(ll i = 0;i < t;i++){
+    for(ll i = 0;i < q;i++){
         ll l,r;
         cin >> l >> r;
         ll ans = qry(head,l-1,r-1);

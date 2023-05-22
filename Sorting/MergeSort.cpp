@@ -28,6 +28,8 @@ int main(){
         ans = 0;
         int n,tmp2;
         cin >> n;
+        a.clear();
+        tmp.clear();
         for(int i = 0;i < n;i++){
             cin >> tmp2;
             a.push_back(tmp2);
