@@ -25,6 +25,17 @@ void DFS(ll s){
         DFS(u);
     }
 }
+ll timer;
+void dfs(ll now, ll pa) {
+    pos[now] = ++timer;
+    add(timer,v[now]);
+    sz[now] = 1;
+    for (ll v : g[now]) {
+        if (v == pa) continue;
+        dfs(v, now);
+        sz[now] += sz[v];
+    }
+}
 queue<ll>q;
 ll dis[N];
 void BFS(ll x){

@@ -12,8 +12,7 @@ ll cross(pii o, pii a,pii b){ // OA OB >0 counterclock
 ll Andrew_monotone_chain(ll n){
     sort(P.begin(), P.end());
     ll l = 0, u = 0;   // upper and lower hull
-    for (ll i=0; i<n; ++i)
-    {
+    for (ll i=0; i<n; ++i){
         while (l >= 2 && cross(L[l-2], L[l-1], P[i]) <= 0){
             l--;
             L.pop_back();

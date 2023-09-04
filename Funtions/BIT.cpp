@@ -11,7 +11,7 @@ int lowbit(int x){
 ll query(int i){ //prefix to i
     ll sum = 0;
     while(i > 0){
-        sum += bit[i][ax];
+        sum += bit[i];
         i -= lowbit(i);
     }
     return sum;
@@ -37,9 +37,7 @@ int main(){
     memset(bit,0,sizeof(bit));
     for(int i = 1;i <= n;i++){
         cin >> num[i];
+        add(i,num[i]);
     }
-    div[1] = num[1];
-    for(int i = 2;i <= n;i++) div[i] = num[i] - num[i-1];
-    for(int i = 1;i <= n;i++) add(i,div[i]);
     return 0;
 }

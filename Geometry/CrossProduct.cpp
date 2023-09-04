@@ -9,11 +9,9 @@ typedef vector<ll> vi;
 typedef pair<ll, ll> pi;
 
 const double EPS = 1e-9;
-struct point
-{
+struct point{
     double x, y;
     point operator * (ll a){return {a * x, a * y};}
-    point operator / (ll a){return {a / x, a / y};}
     point operator + (point b){return {x + b.x, y + b.y};}
     point operator - (point b){return {x - b.x, y - b.y};}
     double operator * (point b){return x * b.x + y * b.y;}
@@ -35,7 +33,7 @@ int ori(point a,point b,point c){
 bool colinear(point a,point b,point c){
     return sign((b - a) ^ (c - a)) == 0;
 }
-bool between(point a,point b,point c){
+bool between(point a,point b,point c){ // c between a and b
     if(!colinear(a,b,c))
         return false;
     return sign((a - c) * (b - c)) <= 0;
