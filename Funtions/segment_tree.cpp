@@ -1,63 +1,93 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long int;
- 
-vector<ll> v1;
-struct node{
-    ll min,l,r;
-    node *pl;
-    node *pr;
-};
-void build(node* par,ll l,ll r){
-    par->l = l;
-    par->r = r;
-    if(l == r){
-        par->min = v1[l];
+#define ll long long
+typedef struct {
+    int set_val, add, sum, val;
+} node;
+int n, q; node tree[100]; int nums[100]; int BIT[100];
+#define lp 2*now
+#define rp 2*now+1
+#define mid (L+R)/2
+// Pull
+void pull(int now){  // update now with 2 children
+    // 用l、rp更新now
+    // tree[now].sum = tree[lp].sum + tree[rp].sum;
+    // tree[now].prefix = max(tree[lp].sum+tree[rp].prefix, tree[lp].prefix);
+    // tree[now].suffix = max(tree[lp].suffix+tree[rp].sum, tree[rp].suffix);
+    // tree[now].middle_max = max(max(tree[lp].middle_max, tree[rp].middle_max), tree[lp].suffix+tree[rp].prefix);
+    // tree[now].middle_max = max(max(tree[now].middle_max, tree[now].prefix), tree[now].suffix);
+}
+// 懶人
+void push(int now, int child){
+    if(tree[now].set_val){
+        tree[child].set_val = 1;
+        tree[child].val = tree[now].val;
+        tree[child].add = tree[now].add;
+    }
+    else {
+        tree[child].add += tree[now].add;
+    }
+}
+void apply_tag(int now, int L, int R){
+    if(tree[now].set_val)
+        tree[now].sum = (R-L+1)*tree[now].val;
+    tree[now].sum += (R-L+1)*tree[now].add;
+    if(L != R){ // 還可以往下走
+        push(now, lp);
+        push(now, rp);
+    }
+    tree[now].add = tree[now].set_val = 0;  // Reset
+}
+// Build
+void build(int L, int R, int now){
+    if(L == R){
+        // init tree[now];
         return;
     }
-    ll mid = (l+r)/2;
-    build(par->pl = new node,l,mid);
-    build(par->pr = new node,mid+1,r);
-    par->min = min(par->pl->min,par->pr->min);
-    return;
+    int M = mid;
+    build(L, M, lp);
+    build(M + 1, R, rp);
+    pull(now);
 }
-ll qry(node* par,ll l,ll r){
-    if(l <= par->l && par->r <= r){
-        return par->min; 
-    }
-    if(r < par->l || l > par->r){
-        return __LONG_LONG_MAX__;
-    }
-    return min(qry(par->pl,l,r),qry(par->pr,l,r));
-}
-void prll(node* par){
-    if(par->l == par->r){
-        cout << par->l << ' ' << par->r << ' ' << par->min << '\n';
+// modify
+void modify(int l, int r, int L, int R, int now){
+    if(R < l || r < L || L > n) // 無效範圍
+        return;
+    if(l <= L && R <= r){
+        // modify tree[now];
+        // tree[now].add += add;    // modify_add
+        // tree[now].set_val = 1;   // modify_mod
+		// tree[now].val = mod;
+		// tree[now].add = 0;  // Set優先
         return;
     }
-    cout << par->l << ' ' << par->r << ' ' << par->min << '\n';
-    prll(par->pl);
-    prll(par->pr);
-    return;
+    int M = mid;
+    apply_tag(now, L, R);
+    modify(l, r, L, M, lp);
+    modify(l, r, M+1, R, rp);
+    apply_tag(lp, L, M);	// 算好(最底的也會，順便Reset)
+    apply_tag(rp, M+1, R);	// 算好(最底的也會，順便Reset)
+    pull(now);  // update now with 2 children
 }
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    ll n, q;
-    cin >> n >> q;
-    for(ll i = 0;i < n;i++){
-        ll tmp;
-        cin >> tmp;
-        v1.push_back(tmp);
+// query
+ll query(int l, int r, int L, int R, int now){
+    int M = mid;
+    if(R < l || r < L || L > n){
+        return 0;
     }
-    node *head;
-    build(head = new node,0,n-1);
-    for(ll i = 0;i < q;i++){
-        ll l,r;
-        cin >> l >> r;
-        ll ans = qry(head,l-1,r-1);
-        cout << ans << '\n';
+    // apply_tag(now, L, R);   // 懶人
+    if(l <= L && R <= r){
+        return tree[now].sum;
     }
-    //prll(head);
-    return 0;
+	return query(l, r, L, M, lp) + query(l, r, M+1, R, rp);
 }
+// pizza_queries
+// 左(s < t): dis_l = (pizza[s] - s) + t;
+// 右(t < s): dis_r = (pizza[s] + s) - t;
+
+// List Removals
+// 用線段樹維護範圍內有多少個被選過
+// 用二分搜找ans前有mod個被選過，若ans - mod == pos，nums[ans]即是答案，順便modify tree[pos]
+
+// polynomial queries
+// 懶人seg，存底跟公差
