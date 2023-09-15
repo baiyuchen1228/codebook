@@ -2,21 +2,10 @@ Codeblock set
 -std=c++14 -Wall -Wshadow -O2
 Linux -Wextra
 
-#include <algorithm>
-#include <iostream>
-#include <cassert>
-#include <cctype>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <map>
-#include <queue>
-#include <stack>
-#include <set>
-#include <string>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+ios::sync_with_stdio(false);
+cin.tie(0);
 
 vim .vimrc
 cd -> vim .vimrc -> cd Desktop -> mkdir -> AC print

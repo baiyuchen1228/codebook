@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
-
 int x1, x2, a, b, n, mod = 1e9+7;
 struct mat{
     long long a[2][2];
@@ -22,9 +18,6 @@ struct mat{
 };
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
- 
     while (cin >> x1 >> x2 >> a >> b >> n){
         mat ret;
         ret.a[0][0] = x1;

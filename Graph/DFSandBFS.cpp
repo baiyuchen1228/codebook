@@ -1,20 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
-#define all(x) (x).begin(), (x).end()
-#define FOR(i,a,b) for (int i = a; i <= b; i++)
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
-ll nxt() {
-   ll x;
-   cin >> x;
-   return x;
-}
 ll N = 1e6;
 vi adj[N];
 bool vis[N];
@@ -51,12 +34,4 @@ void BFS(ll x){
             q.push(u);
         }
     }
-}
-
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    
-
-    return 0;
 }

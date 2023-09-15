@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
 ll M = 1;
 struct gcdstruct{// ax + by = d
     ll d;

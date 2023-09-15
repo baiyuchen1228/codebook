@@ -1,13 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
 const double EPS = 1e-9;
 struct point{
     double x, y;
@@ -48,8 +38,6 @@ bool intersect(point a,point b,point c,point d){ // line(a,b) line(c,d)
     return abc * abd <= 0 && cda * cdb <= 0;
 }
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int n;
     cin >> n;
     point p[1010];

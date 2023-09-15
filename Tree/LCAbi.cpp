@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
 int parent[20][300100]; // n < 2^20
 int depth[300100];
 int LCA(int u,int v){
@@ -21,8 +18,6 @@ int LCA(int u,int v){
     return parent[0][u];
 }
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int n,m;
     cin >> n >> m; // nodes tests
     parent[0][1] = 1; // root

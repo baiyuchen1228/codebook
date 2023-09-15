@@ -1,18 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
-ll nxt(){
-    ll n;
-    cin >> n;
-    return n;
-}
 ll qpow(ll a,ll n,ll m){
     ll res = 1;
     while(n > 0){
@@ -45,8 +30,6 @@ ll choose(ll a,ll b){
 }
 // C(n,k)*C(k,r) = C(n,r) * C(n-r,k-r)
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     ll n = nxt();
     factoial();
     inverse();

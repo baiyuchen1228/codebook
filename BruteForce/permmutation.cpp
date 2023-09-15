@@ -1,14 +1,3 @@
-#include <bits/stdc++.h>
-#define F First
-#define S Second
-#define PB push_back
-#define MP make_pair
-#define REP(i,a,b) for (int i = a; i <= b; i++)
-using namespace std;
-typedef long long ll;
-typedef vector<int> vi;
-typedef pair<int, int> pi;
-
 int n;
 vi subset;
 void search(int k){
@@ -36,7 +25,7 @@ void search2(){
         cout << '\n';
     }
     else{
-        REP(i,1,n){
+        for(int i = 0;i < n;i++){
             if(chosen[i]) continue;
             chosen[i] = true;
             permutation.push_back(i);
@@ -48,11 +37,9 @@ void search2(){
 }
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     cin >> n;
-    REP(i,1,n){
-        permutation.PB(i);
+    for(int i = 0;i < n;i++){
+        permutation.push_back(i);
     }
     do{
         for(auto x:permutation){

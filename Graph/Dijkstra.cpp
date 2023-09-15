@@ -1,22 +1,4 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
-ll nxt() {
-   ll x;
-   cin >> x;
-   return x;
-}
-
 int main(){// O(n+mlogm) no negative edge
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     ll n = nxt();
     ll m = nxt();
     vector<vector<pi> > adj(n+1);
@@ -49,6 +31,5 @@ int main(){// O(n+mlogm) no negative edge
     for(int i = 1;i <= n;i++){
         cout << dis[i] << ' ';
     }
-    cout << '\n';
     return 0;
 }

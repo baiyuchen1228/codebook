@@ -1,8 +1,4 @@
 // Permutation such that no element appears in its original position
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
- 
 ll countDer(ll n)
 {
     // base case

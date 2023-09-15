@@ -1,22 +1,9 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
+
 typedef long long ll;
 typedef vector<ll> vi;
 typedef pair<ll, ll> pi;
 
-ll nxt() {
-   ll x;
-   cin >> x;
-   return x;
-}
-
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int num;
     vector<int> a;
     int N;

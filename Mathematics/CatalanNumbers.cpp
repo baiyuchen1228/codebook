@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
 // Function to print the number
 // 2n! / (n + 1)! / n!
 ll qpow(ll a,ll n,ll m){

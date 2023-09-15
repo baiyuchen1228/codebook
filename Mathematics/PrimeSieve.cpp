@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
-
 const int N = 100000010;
 bool not_prime[N];
 vector<int>prime;
@@ -38,8 +34,6 @@ void Divisors(){
 // n ^ (numbers of factors)
 // pi = pi-1^(ki+1) * xi ^ (ki*(ki+1)/2) ^ Ci-1
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     linear_sieve();
     for(auto x:prime) cout << x <<' ';
     return 0;

@@ -1,13 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
 ll M = 1e9+7;
 
 ll qpow(ll a,ll n,ll m){
@@ -26,7 +16,6 @@ ll qpow(ll a,ll n,ll m){
 // or Burnside's Lemma
 void countDistinctWays(ll n, ll m)
 {
- 
     ll ans = 0;
     // According to Burnside's Lemma
     // calculate distinct ways for each
@@ -43,7 +32,6 @@ void countDistinctWays(ll n, ll m)
     // Print the distinct ways
     cout << ans << endl;
 }
- 
 // Driver Code
 int main()
 {
@@ -52,6 +40,5 @@ int main()
     cin >> n >> m;
     // Function call
     countDistinctWays(n, m);
- 
     return 0;
 }

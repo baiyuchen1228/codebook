@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
 vector<int>a,tmp;
 int ans;//ans = 0 change time
 void msort(int s,int t) { //start end
@@ -19,8 +16,6 @@ void msort(int s,int t) { //start end
 	return ;
 }
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int t;
     cin >> t;
     while (t--)

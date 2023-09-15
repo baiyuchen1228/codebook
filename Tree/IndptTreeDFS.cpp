@@ -1,5 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
 int yes[1002];
 int no[1002];
 vector <int> child[1002];

@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-typedef long long int lli;
-using namespace std;
 lli adj[510][510];       // adjacency matrix
 lli q[510], *qf, *qb;    // BFS queue
 lli p[510];              // BFS tree

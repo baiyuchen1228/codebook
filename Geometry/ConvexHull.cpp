@@ -1,10 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
-typedef pair<ll,ll> pii;
-
-#define F first
-#define S second
 vector<pii> P,L,U;
 ll cross(pii o, pii a,pii b){ // OA OB >0 counterclock
     return (a.F - o.F) * (b.S - o.S) - (a.S-o.S) * (b.F-o.F);
@@ -30,7 +23,6 @@ ll Andrew_monotone_chain(ll n){
     return l + u;
 }
 int main(){
-    ios::sync_with_stdio(false);cin.tie(0);
     ll n,x,y;
     cin >> n;
     for(ll i = 0;i < n;i++){

@@ -1,20 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
-#define all(x) (x).begin(), (x).end()
-#define FOR(s,a,b) for (int s = a; s <= b; s++)
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
-ll nxt() {
-    ll x;
-    cin >> x;
-    return x;
-}
 // n*m put 1*2 2*1
 map<int, vi> mp;
 ll n;

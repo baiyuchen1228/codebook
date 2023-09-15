@@ -1,13 +1,3 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
-typedef pair<ll, ll> pi;
-
 void nimGame(){// removes the last stick wins the game
     int n;
     cin >> n;
@@ -35,8 +25,6 @@ void nimGame2(){// removes 1, 2, or 3 sticks
 } 
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int t;
     cin >> t;
     while(t--){

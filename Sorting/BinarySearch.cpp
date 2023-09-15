@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long int;
 bool ans[100100];
 ll bi_se(ll a,ll b){
     while (b > a)
@@ -15,7 +12,6 @@ bool valid(int x){
     if (x > 10) return true;
     else return false;
 }
-
 int main(){
     ll k = -1,z = 20;
     for(ll i = z;i >= 1;i /= 2){

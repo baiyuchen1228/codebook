@@ -1,14 +1,3 @@
-#include <bits/stdc++.h>
-#define F First
-#define S Second
-#define PB push_back
-#define MP make_pair
-#define REP(i,a,b) for (int i = a; i <= b; i++)
-using namespace std;
-typedef long long ll;
-typedef vector<int> vi;
-typedef pair<int, int> pi;
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
