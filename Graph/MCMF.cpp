@@ -1,18 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-// 有上限的MCMF，無上限直接改用return判斷
+// Ceiled MCMF，if not use return to determine
 typedef struct {
     int from, to, w, cost;
 } edge;
 int n, m, parcel;
-vector<edge> adj;   // 幫每個edge編號
-vector<int> p[505]; // p[u]存edge編號
+vector<edge> adj;   // set num to each edge
+vector<int> p[505]; // p[u] has edge's num
 int now_edge = 0;
 void add_edge(int u, int v, int w, int cost){
     adj.push_back({u, v, w, cost});
     p[u].push_back(now_edge);
     now_edge++;
-    adj.push_back({v, u, 0, -cost});    // 增廣要-的
+    adj.push_back({v, u, 0, -cost});    // argumenting path use -
     p[v].push_back(now_edge);
     now_edge++;
 }
@@ -28,7 +28,7 @@ ll Bellman_Ford(){
             if(w > 0 && dis[to] > dis[from] + cost){
                 flag = 0;
                 dis[to] = dis[from] + cost;
-                par[to] = i;   // 紀錄編號
+                par[to] = i;   // record num
                 flow_rec[to] = min(flow_rec[from], w);
             }
         }

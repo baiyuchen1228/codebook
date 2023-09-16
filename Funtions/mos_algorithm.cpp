@@ -24,7 +24,7 @@ void Mo(){
         while(cr < i.r){}   // add
     }
 }
-// 壓縮
+// Compress too big nums，gives new nums to them
 void compress(){
     vector<pair<int, int>> compress(n);
     rep(i, 1, n){

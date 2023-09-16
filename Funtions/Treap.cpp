@@ -46,7 +46,7 @@ Treap *merge(Treap *a, Treap *b){
     }
 
 }
-pair<Treap*, Treap*> split(Treap *root, int k) {    // 找前k個
+pair<Treap*, Treap*> split(Treap *root, int k) {    // find 1~k
 	if (root == nullptr) return {nullptr, nullptr};
     // push(root); // lazy
 	if (size(root->l) < k) {
@@ -79,10 +79,10 @@ void substring_rev(){
     rep(i, 1, m){
         int x, y; cin >> x >> y;
         auto [a, b] = split(root, x-1); // a: 1~x-1, b: x~n
-        auto [c, d] = split(b, y-x+1);  // 用b分割
+        auto [c, d] = split(b, y-x+1);  // Use b to split
         // c->rev_valid ^= true;
         // push(c);
-        b = merge(a, d);    // 注意順序
+        b = merge(a, d);    // Notice the order
         root = merge(b, c);
     }
     Print(root);

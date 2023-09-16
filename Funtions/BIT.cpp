@@ -21,7 +21,7 @@ ll query(int x, int y){
     }
     return ans;
 }
-// 2D-BIT // Forest Queries (面積)
+// 2D-BIT // Forest Queries (Area)
 void modify(int x, int y, int mod){
     for(; x <= n; x += (x&-x)){
         for(int tmp = y; tmp <= n; tmp += (tmp&-tmp)){

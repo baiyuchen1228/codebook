@@ -6,7 +6,7 @@ typedef struct {
     int to, w, rev_ind;
 } edge;
 vector<edge> adj[505];
-bool label_level(){ // 標記深度，到不了終點return false
+bool label_level(){ // Tag the depth，if can't reach end => return false
     memset(lev, -1, sizeof(lev));
     lev[1] = 0;
     queue<int> q;   q.push(1);
@@ -34,7 +34,7 @@ int dfs(int u, int flow){
             }
         }
     }
-    return 0;   // 到不了終點就會return 0
+    return 0;   // if can't reach end => return 0
 }
 void dinic(){
     while(label_level()){
@@ -49,12 +49,12 @@ void dinic(){
 void build(){
     rep(i, 1, m){
         int u, v, w; cin >> u >> v >> w;
-        adj[u].push_back({v, w, (int)adj[v].sz});   // 反向流的ind
-        adj[v].push_back({u, 0, (int)adj[u].sz-1}); // 已經push一個了，要-1
+        adj[u].push_back({v, w, (int)adj[v].sz});   // inverse flow's index
+        adj[v].push_back({u, 0, (int)adj[u].sz-1}); // have pushed one，need to -1
     }
 }
-// Police Chase，要開adj增廣跟ori判斷題目有給
-// Dinic、dfs2後，用reach當u，只要題目有給的邊 && w == 0 && v不在reach內就是答案
+// Police Chase，need to open adj to Augment && ori to determine what pb give
+// Dinic、dfs2，then use reach as u，if the edge pb has given && w == 0 && v is not in reach，is the ans
 void dfs2(int now, unordered_set<int> &reach){
     if(!vis[now]){
         vis[now] = 1;
@@ -66,11 +66,12 @@ void dfs2(int now, unordered_set<int> &reach){
         }
     }
 }
-// 二分匹配
-// Dinic後找w == 0的正向邊
+// two two pair // School Dance
+// Dinic，then w == 0 edge, which pb has given is the ans
 
 // Distinct Route
-// 邊多開一個valid，如果增廣正向路，反邊設true；增廣增廣邊過的，兩邊都設false，最後從v dfs ans次
+// edge set valid var，if we need to argument pos road，the reverse edge set true valid；
+// if we need argument the argumented edge，both set false，last, from v dfs ans times
 bool get_road(int now, vector<int> &ans, vector<bool> &vis){
     if(now == 1) return true;
     for(auto &v : adj[now]){
