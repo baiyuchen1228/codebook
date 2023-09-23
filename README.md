@@ -1,2 +1,2 @@
 # codebook
- notebook-generator ./ -a ALT45678 -c 3 -i ./coin.jpg
+ notebook-generator ./ -a Capybara -c 3
