@@ -6,7 +6,8 @@ void dfs(int now, int pa) {
     pos[now] = ++timer;
     sz[now] = 1;
     for (int v : g[now]) {
-        if (v == pa) continue;
+        if (v == pa)
+            continue;
         dfs(v, now);
         sz[now] += sz[v];
     }

@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
-void pythagoreanTriplets(int limit)
-{
+void pythagoreanTriplets(int limit) {
     // triplet: a^2 + b^2 = c^2
     ll a, b, c = 0;
     // loop from 2 to max_limit

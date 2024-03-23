@@ -1,9 +1,9 @@
-ll M = 1e9+7;
+ll M = 1e9 + 7;
 
-ll qpow(ll a,ll n,ll m){
+ll qpow(ll a, ll n, ll m) {
     ll res = 1;
-    while(n > 0){
-        if(n & 1){
+    while (n > 0) {
+        if (n & 1) {
             res = res * a % m;
         }
         a = a * a % m;
@@ -14,8 +14,7 @@ ll qpow(ll a,ll n,ll m){
 // Function to find result using
 // Orbit counting theorem
 // or Burnside's Lemma
-void countDistinctWays(ll n, ll m)
-{
+void countDistinctWays(ll n, ll m) {
     ll ans = 0;
     // According to Burnside's Lemma
     // calculate distinct ways for each
@@ -33,10 +32,9 @@ void countDistinctWays(ll n, ll m)
     cout << ans << endl;
 }
 // Driver Code
-int main()
-{
+int main() {
     // N stones and M colors
-    ll n,m;
+    ll n, m;
     cin >> n >> m;
     // Function call
     countDistinctWays(n, m);

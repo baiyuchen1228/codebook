@@ -1,2 +1,2 @@
-if(n is prime)
-(n - 1)! % n = (n - 1)
+if (n is prime)
+(n - 1) ! % n = (n - 1)
